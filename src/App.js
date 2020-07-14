@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button, FormControl, InputLabel, Input } from '@material-ui/core/';
 import './App.css';
+import db from './firebase'
 import Message from './Message';
 
 function App() {
@@ -9,6 +10,12 @@ function App() {
   const [ username, setUsername ] = useState('')
   
   console.log(messages)
+
+  useEffect(() => {
+    db.collection('messages').onSnapshot(snapshot => {
+      setMessages(snapshot.docs.map(doc => doc.data()))
+    })
+  }, [])
 
   useEffect(() => {
     setUsername(prompt('Plss, enter your name: '))
