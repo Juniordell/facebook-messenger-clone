@@ -63,7 +63,7 @@ function App() {
 
       </form>
 
-      <FlipMove>
+      <FlipMove className='flip'>
         {
           messages.map(({id, message}) => (
             <Message key={id} username={username} message={message} />
