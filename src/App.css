@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
 }
 
 .app__form {
@@ -11,7 +12,7 @@
   bottom: 0;
   z-index: 1;
   background: #e9e9eb;
-  width: 50%;
+  width: 40%;
   margin: 20px;
 }
 
@@ -28,6 +29,16 @@
   flex: 0;
 }
 
+.welcome {
+  font-weight: 300;
+  margin-right: 5px;
+}
+
+.spanUser {
+  color: #0093fc;
+  font-weight: 500;
+}
+
 @media (max-width: 600px) {
   .app__form {
     width: 90%;
@@ -37,4 +48,38 @@
 
 .flip {
   width: 100%;
+}
+
+.textLogin {
+  margin-top: 50px;
+  font-weight: 400;
+  color: #0093fc;
+  font-size: 35px;
+}
+
+.app__input2 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.app__input2 .textUser {
+  margin: 20px;
+  outline: none;
+}
+
+.app__input2 button {
+  height: 30px;
+  background-color: #0093fc;
+  border: 1px solid #0093fc;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: .4s;
+}
+
+.app__input2 button:hover {
+  background-color: #e9e9eb;
+  color: #0093fc;
 }

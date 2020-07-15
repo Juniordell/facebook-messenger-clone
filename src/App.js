@@ -12,6 +12,7 @@ function App() {
   const [ input, setInput ] = useState('')
   const [ messages, setMessages ] = useState([{username: 'sonny', message: 'hey, whats up?'}])
   const [ username, setUsername ] = useState('')
+  const [ logged, setLogged ] = useState(false)
   
   useEffect(() => {
     db.collection('messages')
@@ -21,9 +22,15 @@ function App() {
     })
   }, [])
 
-  useEffect(() => {
-    setUsername(prompt('Plss, enter your name: '))
-  }, [])
+  const login = () => {
+    setLogged(true)
+  }
+
+
+
+  // useEffect(() => {
+  //   setUsername(prompt('Plss, enter your name: '))
+  // }, [])
 
   const sendMessage = event => {
     event.preventDefault()
@@ -42,35 +49,50 @@ function App() {
     <div className="App">
       <img src='https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100' alt='logo'></img>
       <h1>Messenger</h1>
-      <h2>Welcome {username}</h2>
+      { !logged && 
+        <div className="container">
+            <h2 className='textLogin'>Login</h2>
+            <div className="app__input2">
+              <Input className='textUser' type='text' placeholder='Your name...' onChange={event => setUsername(event.target.value)} />
+              <button onClick={login}>Confirm</button>
+            </div>
+        </div>  
+      }
+      { logged &&
+      <h2 className='welcome'>Welcome <span className='spanUser'>{username}</span></h2> 
+      }
+      { logged && 
+        <form className='app__form'>
 
-      <form className='app__form'>
-
-      <FormControl className='app__formControl'>
-        <Input className='app__input' placeholder='Enter a message...' value={input} onChange={event => setInput(event.target.value)}/>
-
-        <IconButton 
-        className="app__iconButton"
-        disabled={!input} 
-        variant='contained' 
-        color='primary' 
-        type='submit' 
-        onClick={sendMessage}>
-          <SendIcon />
-        </IconButton>
-
-      </FormControl>
-
-      </form>
-
-      <FlipMove className='flip'>
-        {
-          messages.map(({id, message}) => (
-            <Message key={id} username={username} message={message} />
-          ))
-        }
-      </FlipMove>
-
+        <FormControl className='app__formControl'>
+          <Input className='app__input' placeholder='Enter a message...' value={input} onChange={event => setInput(event.target.value)}/>
+  
+          <IconButton 
+          className="app__iconButton"
+          disabled={!input} 
+          variant='contained' 
+          color='primary' 
+          type='submit' 
+          onClick={sendMessage}>
+            <SendIcon />
+          </IconButton>
+  
+        </FormControl>
+  
+        </form> 
+      }
+    
+      { logged && 
+         <FlipMove className='flip'>
+         {
+           messages.map(({id, message}) => (
+             <Message key={id} username={username} message={message} />
+           ))
+         }
+       </FlipMove>
+      }
+   
+      
 
     </div>
   );

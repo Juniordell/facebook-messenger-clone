@@ -1,14 +1,14 @@
 import firebase from 'firebase'
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyCMkJ9DTP5coqoBlobyDP2bHlWN2kIKD4g",
-    authDomain: "facebook-messager-clone-886df.firebaseapp.com",
-    databaseURL: "https://facebook-messager-clone-886df.firebaseio.com",
-    projectId: "facebook-messager-clone-886df",
-    storageBucket: "facebook-messager-clone-886df.appspot.com",
-    messagingSenderId: "727868740694",
-    appId: "1:727868740694:web:8da95afac633baf4f817f7",
-    measurementId: "G-5BZQG6CR7T"
+    apiKey: "AIzaSyAQgsxu7P9DTQ59vNY2SVHChlKpAediJew",
+    authDomain: "messenger-clone-6c744.firebaseapp.com",
+    databaseURL: "https://messenger-clone-6c744.firebaseio.com",
+    projectId: "messenger-clone-6c744",
+    storageBucket: "messenger-clone-6c744.appspot.com",
+    messagingSenderId: "505323806463",
+    appId: "1:505323806463:web:3179780ccd046d4630b6ca",
+    measurementId: "G-RWP000YMVN"
 })
 
 const db = firebase.firestore()
