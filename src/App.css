@@ -1,9 +1,28 @@
+@import 'colors.css';
+
+html {
+  background-color: var(--bg-color-dark);
+}
+
 .App {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--bg-color-dark);
+}
+
+img {
   margin-top: 10px;
+}
+
+.text-dark {
+  color: var(--text-color-dark) !important;
+  fill: var(--text-color-dark) !important;
+}
+
+.bg-dark {
+  background-color: var(--secondary-dark) !important;
 }
 
 .app__form {
@@ -35,13 +54,13 @@
 }
 
 .spanUser {
-  color: #0093fc;
+  color: var(--primary-dark);
   font-weight: 500;
 }
 
 @media (max-width: 600px) {
   .app__form {
-    width: 90%;
+    width: 80%;
     margin: 20px 0;
   }
 }
@@ -53,7 +72,7 @@
 .textLogin {
   margin-top: 50px;
   font-weight: 400;
-  color: #0093fc;
+  color: var(--primary-dark);
   font-size: 35px;
 }
 
@@ -70,8 +89,8 @@
 
 .app__input2 button {
   height: 30px;
-  background-color: #0093fc;
-  border: 1px solid #0093fc;
+  background-color: var(--primary-dark);
+  border: 1px solid var(--primary-dark);
   color: white;
   outline: none;
   cursor: pointer;
@@ -80,6 +99,6 @@
 }
 
 .app__input2 button:hover {
-  background-color: #e9e9eb;
-  color: #0093fc;
+  background-color: var(--secondary-dark);
+  color: var(--primary-dark);
 }

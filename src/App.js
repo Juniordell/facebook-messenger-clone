@@ -48,24 +48,24 @@ function App() {
   return (
     <div className="App">
       <img src='https://facebookbrand.com/wp-content/uploads/2018/09/Header-e1538151782912.png?w=100&h=100' alt='logo'></img>
-      <h1>Messenger</h1>
+      <h1 className='text-dark'>Messenger</h1>
       { !logged && 
         <div className="container">
             <h2 className='textLogin'>Login</h2>
             <div className="app__input2">
-              <Input className='textUser' type='text' placeholder='Your name...' onChange={event => setUsername(event.target.value)} />
+              <Input className='textUser text-dark' type='text' placeholder='Your name...' onChange={event => setUsername(event.target.value)} />
               <button onClick={login}>Confirm</button>
             </div>
         </div>  
       }
       { logged &&
-      <h2 className='welcome'>Welcome <span className='spanUser'>{username}</span></h2> 
+      <h2 className='welcome text-dark'>Welcome <span className='spanUser'>{username}</span>!</h2> 
       }
       { logged && 
-        <form className='app__form'>
+        <form className='app__form bg-dark'>
 
-        <FormControl className='app__formControl'>
-          <Input className='app__input' placeholder='Enter a message...' value={input} onChange={event => setInput(event.target.value)}/>
+        <FormControl className='app__formControl bg-dark'>
+          <Input className='app__input text-dark bg-dark' placeholder='Enter a message...' value={input} onChange={event => setInput(event.target.value)}/>
   
           <IconButton 
           className="app__iconButton"

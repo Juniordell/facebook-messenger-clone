@@ -1,6 +1,8 @@
+@import 'colors.css';
+
 .message {
     padding: 5px;
-    margin: 10px 280px;
+    margin: 10px 20%;
     width: fit-content;
     min-width: 100px;
 }
@@ -12,14 +14,15 @@
 }
 
 .message__userCard {
-    background-color: #0b81ff !important;
+    background-color: var(--primary-dark) !important;
     color: white !important;
     text-align: right;
     border-radius: 10px !important;
 }
 
 .message__guestCard {
-    background-color: #e9e9eb !important;
+    background-color: var(--secondary-dark) !important;
+    color: white !important;
     text-align: left;
     font-size: 14px;
     border-radius: 10px !important;
